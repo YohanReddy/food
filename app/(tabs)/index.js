@@ -5,12 +5,12 @@ import {
   ImageBackground,
   TextInput,
   Text,
-  StyleSheet,
 } from "react-native";
 import { styled } from "nativewind";
 import { StatusBar } from "expo-status-bar";
 import { Icon } from "react-native-elements";
 import { Button } from "@rneui/themed";
+import { SimpleLineIcons } from "@expo/vector-icons";
 
 const StyledText = styled(Text);
 
@@ -18,11 +18,11 @@ export default function App() {
   return (
     <>
       <StatusBar style="auto" />
-      <ScrollView style={{ flex: 1 }}>
-        <View style={{ position: "absolute", left: 15, zIndex: 1 }}>
-          <Icon name="dashboard" size={32} color="black" padding={10} />
+      <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}>
+        <View style={{ position: "absolute", top: 50, left: 15, zIndex: 1 }}>
+          <SimpleLineIcons name="grid" size={25} color="black" padding={10} />
         </View>
-        <View style={{ position: "center", right: 65, zIndex: 1 }}>
+        <View style={{ position: "center", top: 47, right: 65, zIndex: 1 }}>
           <Icon
             name="location-pin"
             size={20}
@@ -34,17 +34,17 @@ export default function App() {
             Area 7, Garki Abuja
           </Text>
         </View>
-        <View style={{ position: "absolute", right: 15, zIndex: 1 }}>
-          <Icon name="mail" size={32} color="black" padding={10} />
+        <View style={{ position: "absolute", top: 45, right: 15, zIndex: 1 }}>
+          <Icon name="mail-outline" size={32} color="black" padding={10} />
         </View>
-        <Text style={{ top: 40, fontWeight: "bold", fontSize: 18, left: 30 }}>
+        <Text style={{ top: 90, fontWeight: "bold", fontSize: 18, left: 30 }}>
           What are we ordering today?
         </Text>
         <View>
           <ScrollView
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            style={{ marginVertical: 65 }}
+            style={{ marginVertical: 105 }}
             contentContainerStyle={{
               marginLeft: 20,
               padding: 10,
@@ -100,7 +100,7 @@ export default function App() {
             </View>
           </ScrollView>
         </View>
-        <View>
+        <View style={{ top: -30 }}>
           <ImageBackground
             source={require("../../assets/card.png")}
             imageStyle={{ borderRadius: 6 }}
@@ -170,7 +170,6 @@ export default function App() {
             width: 330,
             height: 50,
             left: 30,
-            marginTop: 15,
             marginBottom: 15,
           }}
           placeholder="Find your favourite delicacy"
